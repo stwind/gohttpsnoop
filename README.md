@@ -192,7 +192,7 @@ data: 0x10ce63b
 len: 5
 ```
 
-We can now try to get the `http.Request.Method` and `http.Request.URL.Path`  values in gdb. Start the server with again:
+We can now try to get the `http.Request.Method` and `http.Request.URL.Path`  values in gdb. Start the server again:
 
 ```sh
 $ gdb -q main
@@ -224,14 +224,14 @@ The `req` is at `0x000000c0000e6400`, `req.Method` is at offset `0`, so the addr
 0xc0000b6160:	71 'G'	69 'E'	84 'T'
 ```
 
-Nice, we get the method value of `GET`. Now for the `req.URL.Path`, start with `req.URL` at offset 16
+Nice, we get the method value of `GET`. Now for the `req.URL.Path`, start with `req.URL` at offset `16` from `req`
 
 ```sh
 (gdb) x/1xg 0x000000c0000e6400+16
 0xc0000e6410:	0x000000c0000e4300
 ```
 
-So `0x000000c0000e4300` is the address `req.URL`, now for the `req.URL.Path` at offset 56
+So `0x000000c0000e4300` is the address `req.URL`, now for the `req.URL.Path` at offset `56`
 
 ```sh
 (gdb) x/2xg 0x000000c0000e4300+56
