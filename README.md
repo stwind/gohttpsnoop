@@ -2,7 +2,7 @@
 
 An experiment on tracing Go function with complex struct arguments.
 
-## What is does
+## What it does
 
 This program will trace HTTP server handlers by attaching uprobe to a handler function with eBPF, and print the method and path whenever the the function called, i.e. an request accepted.
 
@@ -231,7 +231,7 @@ Nice, we get the method value of `GET`. Now for the `req.URL.Path`, start with `
 0xc0000e6410:	0x000000c0000e4300
 ```
 
-So `0x000000c0000e4300` is the address `req.URL`, now for the `req.URL.Path` at offset `56`
+So `0x000000c0000e4300` is the address of `req.URL`, now for the `req.URL.Path` at offset `56`
 
 ```sh
 (gdb) x/2xg 0x000000c0000e4300+56
@@ -240,7 +240,7 @@ So `0x000000c0000e4300` is the address `req.URL`, now for the `req.URL.Path` at 
 0xc0000b6164:	47 '/'	112 'p'	105 'i'	110 'n'	103 'g'
 ```
 
-We successfully found the `req.URL.Path` to be `/ping` !
+We've successfully found the `req.URL.Path` to be `/ping` !
 
 #### Transform into eBPF program
 
