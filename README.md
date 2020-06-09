@@ -4,7 +4,7 @@ An experiment on tracing Go function with complex struct arguments.
 
 ## What is does
 
-This program will trace HTTP server handlers by attaching uprobe in an eBPF to a handler function, and print the method and path whenever the the function called, i.e. an request accepted.
+This program will trace HTTP server handlers by attaching uprobe to a handler function with eBPF, and print the method and path whenever the the function called, i.e. an request accepted.
 
 To seen it in action
 
