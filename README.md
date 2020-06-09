@@ -141,7 +141,7 @@ We can see that the bytes value of `w http.ResponseWriter` is `606a760000000000 
 
 #### Digging into struct
 
-Next we want to get the method and path from the `http.Request` struct, i.e. `http.Request.Method` and `http.Request.URL.Path`. Let's first figure the offsets of these fields.
+Next we want to get the method and path from the `http.Request` struct, i.e. `http.Request.Method` and `http.Request.URL.Path`. Let's first figure out the offsets of these fields.
 
 ```go
 package main
@@ -192,7 +192,7 @@ data: 0x10ce63b
 len: 5
 ```
 
-We can now try to get the `http.Request.Method` and `http.Request.URL.Path`  values in gdb. Start the server with aga again:
+We can now try to get the `http.Request.Method` and `http.Request.URL.Path`  values in gdb. Start the server with again:
 
 ```sh
 $ gdb -q main
