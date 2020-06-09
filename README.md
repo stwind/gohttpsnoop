@@ -58,7 +58,7 @@ For Go, the slightly difficult part is reading these information from functions 
 
 In [Golang bcc/BPF Function Tracing](http://www.brendangregg.com/blog/2017-01-31/golang-bcc-bpf-function-tracing.html), Brendan Gregg demonstrated how to read function arguments from the stack. And in [Tracing Go Functions with eBPF Part 2](https://www.grant.pizza/blog/tracing-go-functions-with-ebpf-part-2/), Grant Seltzer Richman also showed how to extract function arguments by calculating stack offset or using  [weaver](https://github.com/grantseltzer/weaver). 
 
-But these are only for primitive type arguments, our tasks here is to go deeper into the [`http.Request`](https://golang.org/pkg/net/http/#Request), i.e. `http.Request.Method` and `http.Request.URL.Path`.
+But these are only for primitive type arguments, our tasks here is to go deeper into the [`http.Request`](https://golang.org/pkg/net/http/#Request) to find `http.Request.Method` and `http.Request.URL.Path`.
 
 ### Solution
 
