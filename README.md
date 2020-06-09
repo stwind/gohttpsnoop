@@ -240,7 +240,7 @@ So `0x000000c0000e4300` is the address `req.URL`, now for the `req.URL.Path` at 
 0xc0000b6164:	47 '/'	112 'p'	105 'i'	110 'n'	103 'g'
 ```
 
-We successfully found the `req.URL.Path` to be `/ping `!
+We successfully found the `req.URL.Path` to be `/ping` !
 
 #### Transform into eBPF program
 
