@@ -10,7 +10,7 @@ To seen it in action
 
 ```sh
 $ go build -o server server/main.go # build the server
-$ go run main.go ./main main.ping # start the snooper
+$ go run main.go ./server/main main.ping # start the snooper
 Method     Path
 ```
 
